@@ -43,15 +43,6 @@ public class OwnerController {
         return "owners/findOwners";
     }
 
-    @GetMapping("/{ownerId}")
-    public String showOner(@PathVariable String ownerId, Model model){
-
-        model.addAttribute("owner", ownerService.findById(Long.valueOf(ownerId)));
-
-        return "owners/ownerDetails";
-
-    }
-
     @GetMapping
     public String processFindForm(Owner owner, BindingResult result, Model model){
         // allow parameterless GET request for /owners to return all records
